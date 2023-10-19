@@ -7,31 +7,31 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentIndex < contentElements.length) {
         const currentElement = contentElements[currentIndex];
         const text = currentElement.textContent;
-        const answer = confirm(text + "\n\nПродвигаться к следующему элементу?");
+        const answer = confirm(text + "\n\nПросуватися до наступного елемента?");
   
         if (answer) {
           currentIndex++;
           displayCurrentElement();
         } else {
           if (currentIndex > 0) {
-            const goBack = confirm("Вернуться к предыдущему элементу?");
+            const goBack = confirm("Повернутися до попереднього елемента?");
             if (goBack) {
               currentIndex--;
               displayCurrentElement();
             } else {
-              alert("Вы достигли конца страницы. Вернуться к предыдущему элементу?");
+              alert("Ви досягли кінця сторінки. Повернутися до попереднього елемента?");
             }
           } else {
-            alert("Вы достигли начала страницы.");
+            alert("Ви досягли початку сторінки.");
           }
         }
       } else {
-        const goBack = confirm("Вы достигли конца страницы. Вернуться к предыдущему элементу?");
+        const goBack = confirm("Ви досягли кінця сторінки. Повернутися до попереднього елемента?");
         if (goBack) {
           currentIndex--;
           displayCurrentElement();
         } else {
-          alert("Вы достигли конца страницы.");
+          alert("Ви досягли кінця сторінки.");
         }
       }
     }
